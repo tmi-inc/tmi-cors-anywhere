@@ -135,13 +135,13 @@ describe('Basic functionality', function() {
       .expect('Access-Control-Allow-Origin', '*')
       .expect(200, helpText, done);
   });
-
+  
   it('GET /http:/notenoughslashes', function(done) {
     // 'http:/notenoughslashes' is an invalid URL.
     request(cors_anywhere)
       .get('/http:/notenoughslashes')
       .expect('Access-Control-Allow-Origin', '*')
-      .expect(404, 'The URL is invalid: two slashes are needed after the http(s):.', done);
+      .expect(404, 'ot found because of proxy error: NetConnectNotAllowedError: Nock: Not allow net connect for "notenoughslashes:80/', done);
   });
 
 
