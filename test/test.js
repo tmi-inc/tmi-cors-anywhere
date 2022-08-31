@@ -141,7 +141,7 @@ describe('Basic functionality', function() {
     request(cors_anywhere)
       .get('/http:/notenoughslashes')
       .expect('Access-Control-Allow-Origin', '*')
-      .expect(404, 'ot found because of proxy error: NetConnectNotAllowedError: Nock: Not allow net connect for "notenoughslashes:80/', done);
+      .expect(404, 'Not found because of proxy error: NetConnectNotAllowedError: Nock: Not allow net connect for "notenoughslashes:80/", done);
   });
 
 
